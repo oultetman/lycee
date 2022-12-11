@@ -1083,7 +1083,7 @@ def cercle(x, y, rayon, **kwargs):
 # -------------------------------------------------------
 def figure(nb_lignes=1, nb_cols=1, **kwargs):
     """crée une ou des zones graphiques.
-    il faut obligatoirement crée au mins une zone pour pouvoir réaliser
+    il faut obligatoirement crée au minimun une zone pour pouvoir réaliser
     un graphique"""
     global __figure, __axe, __ligne, __colonne, __ligne_max, __colonne_max,__repere
     titre = kwargs.get("titre", "")
@@ -1140,7 +1140,7 @@ def suivant():
 
 
 def affiche_graphique():
-    """affiche les graphiques précédement calculé"""
+    """affiche les graphiques précédemment calculés"""
     plot.show()
 
 
@@ -1176,6 +1176,7 @@ def baton(xi, ni='optionnel', **kwargs):
 
 
 def secteur(valeurs: list, etiquettes: list, **kwargs):
+    """Génère un diagramme secteur"""
     if len(valeurs) != len(etiquettes):
         raise IndexError("le nombres de valeur doit être égal aux nombres d'étiquettes")
     test_figure()
@@ -1192,6 +1193,7 @@ def ligne_brisee(xi: list, yi: list, *args: list, **kwargs):
     trace_courbe(xi, yi, *args, **kwargs)
 
 def table(table_2d: list[list], **kwargs):
+    """Génere un tableau 1d ou 2d"""
     test_figure()
     nb_cols = len(table_2d[0])
     nb_lignes = len(table_2d)
